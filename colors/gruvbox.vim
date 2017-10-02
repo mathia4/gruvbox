@@ -87,7 +87,7 @@ let s:gb = {}
 
 " fill it with absolute colors
 let s:gb.dark0_hard  = ['#1d2021', 234]     " 29-32-33
-let s:gb.dark0       = ['#282828', 235]     " 40-40-40
+let s:gb.dark0       = ['#292929', 235]     " 41-41-41
 let s:gb.dark0_soft  = ['#32302f', 236]     " 50-48-47
 let s:gb.dark1       = ['#3c3836', 237]     " 60-56-54
 let s:gb.dark2       = ['#504945', 239]     " 80-73-69
@@ -310,7 +310,7 @@ if exists('g:gruvbox_number_column')
   let s:number_column = get(s:gb, g:gruvbox_number_column)
 endif
 
-let s:sign_column = s:bg1
+let s:sign_column = s:bg0
 
 if exists('g:gitgutter_override_sign_column_highlight') &&
       \ g:gitgutter_override_sign_column_highlight == 1
@@ -511,8 +511,8 @@ call s:HL('IncSearch', s:hls_cursor, s:bg0, s:inverse)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
-call s:HL('StatusLine',   s:bg2, s:fg1, s:inverse)
-call s:HL('StatusLineNC', s:bg1, s:fg4, s:inverse)
+call s:HL('StatusLine',   s:bg0, s:fg1, s:inverse)
+call s:HL('StatusLineNC', s:bg0, s:bg3, s:inverse)
 
 " The column separating vertically split windows
 call s:HL('VertSplit', s:bg3, s:vert_split)
@@ -541,7 +541,7 @@ hi! link WarningMsg GruvboxRedBold
 " Gutter: {{{
 
 " Line number for :number and :# commands
-call s:HL('LineNr', s:bg4, s:number_column)
+call s:HL('LineNr', s:bg2, s:number_column)
 
 " Column where signs are displayed
 call s:HL('SignColumn', s:none, s:sign_column)
